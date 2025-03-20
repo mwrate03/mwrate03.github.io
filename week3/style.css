@@ -1,5 +1,9 @@
 h1 {
   color: blue;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 h2 {
   color: blueviolet;
@@ -10,4 +14,7 @@ body {
 }
 body {
   background-color: antiquewhite;
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
