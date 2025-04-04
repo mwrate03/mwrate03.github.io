@@ -1,0 +1,52 @@
+h1 {
+  color: black;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+h2 {
+  color: rgb(154, 0, 82);
+  font-style: normal;
+  font-family: "Comic Neue", cursive; /* Similar font to what was used in Palat's website (comic sans) */
+  font-weight: 700;
+}
+p {
+  color: black;
+  font-style: normal;
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-size: 15px;
+}
+li {
+  color: black;
+  font-style: normal;
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-size: 15px;
+}
+body {
+  height: auto;
+  background-color: #68fafe; /* gradient doesn't work without background image */
+  background-image: linear-gradient(#68fafe, #8338ec, #cfff00, #ff006e);
+  /* Using adobe colour I made the gradient from the main colours in the first section of Palat's website. */
+}
+
+.layout {
+  /* learned how to put my div's into a class so I can make them displayed horizontally. */
+  display: flex; /* used flex so it arranges it horizontally without going past the website width. */
+  flex-wrap: wrap; /* so it wraps down to the next line */
+  justify-content: center; /* keeps my box models centered */
+}
+
+.layout div {
+  background-color: #ffffffa0;
+  width: 300px;
+  height: auto; /* so text doesn't go outside the box model I made */
+  border: 15px solid rgb(240, 127, 198);
+  border-radius: 30px;
+  padding: 25px;
+  margin: 10px;
+  margin-right: 10px;
+}
