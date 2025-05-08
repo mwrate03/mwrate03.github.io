@@ -1,120 +1,129 @@
-:root {
-    --primary-bg-color: #f4f4f4;
-    --text-color: #333;
-    --main-bg-color: #333;
-    --main-text-color: #fff;
-    --main-btn-bg-color: #938989;
-  }
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #3b3b3b;
+}
+
+/* Header styling */
+header {
+  background-color: #374018dc;
+  color: #f2f2f2;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Background Video styling */
+#bg-video {
+  position: fixed;
+  /* 
+  I used 'position' to control where elements appear on the page. 
+  I used it for the background video so it stays full screen behind everything, 
+  and for the play/pause button to place it in the bottom-left corner.
   
-  body,
-  h1,
-  p,
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Arial", sans-serif;
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
+  I learned about how it works from W3Schools — it helped me understand the difference between 
+  static, absolute, fixed, and relative. Using 'position' made it easier to layer elements 
+  and control the layout exactly how I wanted.
+  */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  /* Also used w3 schools to learn about 'z-index' as the video was covering the header. 
+  This ensured that each position doesn't overlap eachother. */
+}
+
+/* Play/pause button styling */
+.custom-controls {
+  position: fixed; 
+  bottom: 85px; /* adjusts distance from footer */
+  left: 10px;   /* adjust distance from left */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; /* make sure it appears above background video */
+}
+
+.custom-controls button {
+  background-color: #f2f2f2aa;
+  border-radius: 10px;
+  border-color: #5c8151c5;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* footer styling */
+footer {
+  background-color: #5c8151c5;
+  /* Wanted the colour of the footer to match the background video, 
+  so that it doesn't stand out as much or take up so much space on the website, 
+  so I used adobe color to extract colour codes from the grass */
+  color: #f2f2f2;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+/* my added code */
+
+.timer-display {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  background: #d5edf2;
+  opacity: 0.5;
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.start-btn {
+  background-color: #d5edf2;
+  opacity: 0.75;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #efdea6;
+}
+
+@media (max-width: 600px) {
+  nav ul {
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
   }
-  
-  /* Add additional styles as needed */
-  
-  /* Create a container for the main content */
-  .container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 10px;
+
+  nav li {
+    margin: 0.5rem 0;
   }
-  
-  /* Header styling */
-  header {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-  }
-  
-  /* Navigation styling */
-  nav {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
-  /* Media player styling */
-  .media-player {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .media-player video {
-    max-width: 100%;
-  }
-  
-  .custom-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .custom-controls button {
-    background-color: var(--main-btn-bg-color);
-    color: var(--main-text-color);
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
+
+  .btn-group {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .progress-bar {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    margin-top: 10px;
-    overflow: hidden;
-  }
-  
-  .progress-bar span {
-    display: block;
-    height: 100%;
-    background-color: var(--main-bg-color);
-    width: 0;
-    transition: width 0.3s ease;
-  }
-  
-  /* Footer styling */
-  footer {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-  }
+}
