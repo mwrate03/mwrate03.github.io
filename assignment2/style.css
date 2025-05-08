@@ -1,9 +1,4 @@
-main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
+/*----- General -----*/
 
 body {
   font-family: "Arial", sans-serif;
@@ -12,7 +7,15 @@ body {
   color: #3b3b3b;
 }
 
-/* Header styling */
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/*----- Header -----*/
+
 header {
   background-color: #374018dc;
   color: #f2f2f2;
@@ -20,41 +23,38 @@ header {
   text-align: center;
 }
 
-/* Background Video styling */
+/*----- Background Video -----*/
+
 #bg-video {
   position: fixed;
-  /* 
-  I used 'position' to control where elements appear on the page. 
-  I used it for the background video so it stays full screen behind everything, 
-  and for the play/pause button to place it in the bottom-left corner.
-  
-  I learned about how it works from W3Schools — it helped me understand the difference between 
-  static, absolute, fixed, and relative. Using 'position' made it easier to layer elements 
-  and control the layout exactly how I wanted.
-  */
+  /* I used 'position' to control where elements appear on the page. 
+     This keeps the video fullscreen and fixed behind all content. */
+
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+
   z-index: -1;
-  /* Also used w3 schools to learn about 'z-index' as the video was covering the header. 
-  This ensured that each position doesn't overlap eachother. */
+  /* I learned about 'z-index' from W3Schools. 
+     This ensures the background stays behind everything else. */
 }
 
-/* Play/pause button styling */
+/*----- Custom Controls -----*/
+
 .custom-controls {
-  position: fixed; 
-  bottom: 85px; /* adjusts distance from footer */
-  left: 10px;   /* adjust distance from left */
+  position: fixed;
+  bottom: 85px; /* distance from footer */
+  left: 10px; /* aligns to bottom-left corner */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10; /* make sure it appears above background video */
+  z-index: 10; /* makes sure it appears above the background video */
 }
 
 .custom-controls button {
-  background-color: #f2f2f2aa;
+  background-color: #f2f2f2aa; /* semi-transparent */
   border-radius: 10px;
   border-color: #5c8151c5;
   padding: 8px 12px;
@@ -63,22 +63,22 @@ header {
   align-items: center;
 }
 
-/* footer styling */
+/*----- Footer -----*/
+
 footer {
   background-color: #5c8151c5;
-  /* Wanted the colour of the footer to match the background video, 
-  so that it doesn't stand out as much or take up so much space on the website, 
-  so I used adobe color to extract colour codes from the grass */
+  /* I used Adobe Color to extract grass tones from the video 
+     so the footer blends with the theme. */
+
   color: #f2f2f2;
   text-align: center;
   position: fixed;
   bottom: 0;
-  text-align: center;
-  padding-bottom: 10px;
   width: 100%;
+  padding-bottom: 10px;
 }
 
-/* my added code */
+/*----- Timer Display -----*/
 
 .timer-display {
   font-size: 2.5rem;
@@ -89,6 +89,8 @@ footer {
   display: inline-block;
   border-radius: 15px;
 }
+
+/*----- Button Styling -----*/
 
 .btn-group {
   display: flex;
@@ -111,6 +113,8 @@ footer {
 .start-btn:hover {
   background-color: #efdea6;
 }
+
+/*----- Responsive Style -----*/
 
 @media (max-width: 600px) {
   nav ul {
