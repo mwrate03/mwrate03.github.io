@@ -1,7 +1,9 @@
 /*----- General -----*/
-
+/* To make my website look the way it does I first sketched out my idea/design,
+ then selected colours/fonts and proceeded to do the coding. */
 body {
   font-family: "Arial", sans-serif;
+  font-size: small;
   margin: 0;
   padding: 0;
   color: #3b3b3b;
@@ -21,6 +23,13 @@ header {
   color: #f2f2f2;
   padding: 5px;
   text-align: center;
+  font-family: "Playwrite GB J", cursive;
+  /* Wanted to use a font that had a calm feeling whilst also having a handwritten aesthethic. 
+  Using google fonts I came up with this for the headers. 
+  I decided it might be too confusing to read as the button fonts so I used the same font without cursive!.*/
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*----- Background Video -----*/
@@ -45,7 +54,7 @@ header {
 
 .custom-controls {
   position: fixed;
-  bottom: 85px; /* distance from footer */
+  bottom: 75px; /* distance from footer */
   left: 10px; /* aligns to bottom-left corner */
   display: flex;
   justify-content: space-between;
@@ -81,11 +90,11 @@ footer {
 /*----- Timer Display -----*/
 
 .timer-display {
-  font-size: 2.5rem;
+  font-size: 6rem;
   margin: 1rem 0;
   background: #d5edf2;
-  opacity: 0.5;
-  padding: 1rem 2rem;
+  opacity: 0.7;
+  padding: 4rem 8rem;
   display: inline-block;
   border-radius: 15px;
 }
@@ -101,10 +110,14 @@ footer {
 
 .start-btn {
   background-color: #d5edf2;
-  opacity: 0.75;
+  opacity: 0.8;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -115,17 +128,19 @@ footer {
 }
 
 /*----- Responsive Style -----*/
-
+/* If the screen is 600px wide or smaller (like a phone), apply these styles */
 @media (max-width: 600px) {
+  /* Stack the navigation list items vertically and center them */
   nav ul {
     flex-direction: column;
     align-items: center;
   }
-
+  /* Add spacing between each nav item */
   nav li {
     margin: 0.5rem 0;
   }
 
+  /* Stack the timer buttons vertically and center them */
   .btn-group {
     flex-direction: column;
     align-items: center;
