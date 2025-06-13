@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(bckgrnd.jpg);
+  /* sourced from freepix https://www.freepik.com/free-vector/arcade-game-world-pixel-scene_4815143.htm#fromView=search&page=3&position=18&uuid=1e777ecf-51b4-4391-936c-08dc742a9446&query=8bit */
+  background-size: cover;
+}
+
+.sidebar {
+  width: 250px; /* Fixed width sidebar */
+  height: 100vh;
+  overflow-y: auto; /* Scrollable if needed */
+  background: #f4d8f4ba;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999; /* So it stays on top */
+}
+
+.sidebar img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  cursor: grab;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.canvas {
+  width: 1100px; /* Fixed width for your collage area */
+  height: 80vh; /* 80% of viewport height */
+  margin: 30px; /* Adds some space around it */
+  background: #f2aee0;
+  border: 1px dashed #ccc;
+  position: relative; /* Needed for absolute positioning of elements inside */
+  overflow: hidden;
+}
+
+.canvas-item {
+  position: absolute;
+  cursor: move;
+  width: 200px; /* Set fixed width */
+  height: auto; /* Let height adjust automatically */
+}
+
+.selected {
+  outline: 3px solid #007bff; /* A bright blue outline to show selection */
+  outline-offset: 3px;
+}
+
+.textbox {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 150px;
+  min-height: 30px;
+  background-color: rgb(242, 123, 181);
+  border: 2px solid #ffffff7f;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: sans-serif;
+  cursor: move; /* shows move icon when not in edit mode */
+  word-break: break-word; 
+}
+
+.toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 250px; /* so the canvas doesn't clash with the sidebar */
+  height: 60px;
+  background-color: #cb4873;
+  border-top: 2px solid #cbb2c4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+button {
+  font-size: 24px;
+  border-radius: 10px;
+}
